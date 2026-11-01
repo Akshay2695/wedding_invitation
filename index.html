@@ -415,6 +415,8 @@ body { background: #FBF1E1; }
 .opening .dr-top, .opening .dr-bot { opacity: 0; pointer-events: none; }
 .dr-flash { position: absolute; inset: 0; z-index: 4; background: #FFF3D2; opacity: 0; transition: opacity .6s ease; pointer-events: none; }
 .splash.flash .dr-flash { opacity: 1; }
+.dr-top h1 { white-space: nowrap; font-size: clamp(40px, 11.6vw, 96px); }
+@media (max-width: 560px) { .dr-bot { padding-top: 40px; gap: 6px; } .dr-bot .open-btn { min-height: 46px; padding: 0 24px; font-size: 13px; } .dr-hint { font-size: 15px; } }
 
 .sway { transform-box: fill-box; transform-origin: 50% 100%; animation: sway 5s ease-in-out infinite alternate; }
 @keyframes sway { from { transform: rotate(-1.6deg); } to { transform: rotate(1.6deg); } }
@@ -990,8 +992,8 @@ const CONFIG = {
     var vw = window.innerWidth, vh = window.innerHeight;
     var s = Math.max(vw / IW, vh / IH);
     base.s = s;
-    base.x = clamp(vw / 2 - DCX * s, vw - IW * s, 0);
-    base.y = clamp(vh * 0.52 - DCY * s, vh - IH * s, 0);
+    base.x = clamp(vw / 2 - 748 * s, vw - IW * s, 0);
+    base.y = clamp(vh * 0.46 - DCY * s, vh - IH * s, 0);
     stage.style.transform = 'translate(' + base.x + 'px,' + base.y + 'px) scale(' + s + ')';
   }
   layout();
